@@ -32,7 +32,7 @@ public class Ship {
         if (this.downAnchor) {
             System.out.println(" орабль " + name + " остановилс€");
         } else
-            System.out.println(" орабль не может остановитьс€, у него подн€т €корь");
+            System.out.println(" орабль не может остановитьс€, так как у него подн€т €корь");
     }
 
     public void moor() {
