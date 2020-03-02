@@ -1,11 +1,11 @@
 package ship;
 
-public class Frigate extends Ship {
+public final class Frigate extends Ship {
 
 
-    protected boolean upSails; //паруса
-    protected int mast; // мачта
-    protected int gun; //пушки
+    public boolean upSails; //паруса
+    private int mast; // мачта
+    private int gun; //пушки
 
 
     public Frigate(String name, int deck, String color, boolean downAnchor, boolean upSails, int mast, int gun) {

@@ -1,11 +1,11 @@
 package ship;
 
-public class Galleon extends Ship {
+public final class Galleon extends Ship {
 
 
-    protected int cabin; //каюта
-    protected boolean hasHold; //трюм
-    public int cat; //котик
+    private int cabin; //каюта
+    private boolean hasHold; //трюм
+    private int cat; //котик
 
 
     public Galleon(String name, int deck, String color, boolean downAnchor, int cabin, boolean hasHold, int cat) {
@@ -14,7 +14,8 @@ public class Galleon extends Ship {
         this.hasHold = hasHold;
         this.cat = cat;
     }
-
+    
+    
 
     public int animal() {
         Helper.output("Котиков на палубе находится: ");
@@ -22,8 +23,8 @@ public class Galleon extends Ship {
     }
 
 
-    public String animal(int сarrots) {
-        return ("На палубе находится " + cat + " котиков и " + сarrots + " попугаев ");
+    public String animal(final int carrots) {
+        return ("На палубе находится " + cat + " котиков и " + carrots + " попугаев ");
     }
 
 
@@ -31,6 +32,7 @@ public class Galleon extends Ship {
     public void moor() {
         Helper.output("Корабль " + name + " высадил котика на берег");
         Helper.output("Котиков на палубе теперь " + (this.cat - 1));
+        this.cat--;
     }
 
 

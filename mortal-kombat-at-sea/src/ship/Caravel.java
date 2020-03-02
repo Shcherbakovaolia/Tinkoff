@@ -1,6 +1,6 @@
 package ship;
 
-public class Caravel extends Ship {
+public final class Caravel extends Ship {
 
 
     public boolean upSails; //паруса

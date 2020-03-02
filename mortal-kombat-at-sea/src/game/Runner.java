@@ -22,6 +22,7 @@ public class Runner {
         galleon.moor();
 
 
+
         //проверяем методы класса Caravel
         Caravel caravel = new Caravel("caravel", 2, "blue", false, false, true);
         caravel.upLadder();
