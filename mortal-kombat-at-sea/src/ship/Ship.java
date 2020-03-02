@@ -1,13 +1,13 @@
 package ship;
 
-public class Ship {
+public abstract class Ship implements ISwimmer {
 
 
-    public String name; //имя
-    public int deck; //палуба
-    public int board; //борт
-    public String color; //цвет
-    public boolean downAnchor; //якорь
+    public String name; //РёРјСЏ
+    public int deck; //РїР°Р»СѓР±Р°
+    public int board; //Р±РѕСЂС‚
+    public String color; //С†РІРµС‚
+    public boolean downAnchor; //СЏРєРѕСЂСЊ
 
 
     public Ship(String name, int deck, String color, boolean downAnchor) {
@@ -18,25 +18,26 @@ public class Ship {
         this.downAnchor = downAnchor;
     }
 
-    //метод при котором корабль отплывает
+    @Override
     public void move() {
         if (!this.downAnchor) {
-            System.out.println("Корабль " + name + " плывет");
+            Helper.output("РљРѕСЂР°Р±Р»СЊ " + name + " РїР»С‹РІРµС‚");
         } else
-            System.out.println("Корабль не может плыть, у него опущен якорь");
+            Helper.output("РљРѕСЂР°Р±Р»СЊ РЅРµ РјРѕР¶РµС‚ РїР»С‹С‚СЊ, Сѓ РЅРµРіРѕ РѕРїСѓС‰РµРЅ СЏРєРѕСЂСЊ");
     }
 
 
-    //метод при котором корабль останавливается
+    @Override
     public void stop() {
         if (this.downAnchor) {
-            System.out.println("Корабль " + name + " остановился");
+            Helper.output("РљРѕСЂР°Р±Р»СЊ " + name + " РѕСЃС‚Р°РЅРѕРІРёР»СЃСЏ");
         } else
-            System.out.println("Корабль не может остановиться, так как у него поднят якорь");
+            Helper.output("РљРѕСЂР°Р±Р»СЊ РЅРµ РјРѕР¶РµС‚ РѕСЃС‚Р°РЅРѕРІРёС‚СЊСЃСЏ, С‚Р°Рє РєР°Рє Сѓ РЅРµРіРѕ РїРѕРґРЅСЏС‚ СЏРєРѕСЂСЊ");
     }
 
+    @Override
     public void moor() {
-        System.out.println("Корабль " + name + " причалил");
+        Helper.output("РљРѕСЂР°Р±Р»СЊ " + name + " РїСЂРёС‡Р°Р»РёР»");
     }
 
 }

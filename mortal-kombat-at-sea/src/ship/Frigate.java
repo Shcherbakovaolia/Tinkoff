@@ -3,9 +3,9 @@ package ship;
 public class Frigate extends Ship {
 
 
-    public boolean upSails; //паруса
-    public int mast; // мачта
-    public int gun; //пушки
+    protected boolean upSails; //РїР°СЂСѓСЃР°
+    protected int mast; // РјР°С‡С‚Р°
+    protected int gun; //РїСѓС€РєРё
 
 
     public Frigate(String name, int deck, String color, boolean downAnchor, boolean upSails, int mast, int gun) {
@@ -18,12 +18,12 @@ public class Frigate extends Ship {
 
 
     public void shoot() {
-        System.out.println(name + " стреляет из " + this.gun + " пушек");
+        Helper.output(name + " СЃС‚СЂРµР»СЏРµС‚ РёР· " + this.gun + " РїСѓС€РµРє");
     }
 
 
     public void upSails() {
-        System.out.println(name + " поднял паруса");
+        Helper.output(name + " РїРѕРґРЅСЏР» РїР°СЂСѓСЃР°");
         upSails = true;
     }
 

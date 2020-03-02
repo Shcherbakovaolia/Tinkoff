@@ -3,9 +3,9 @@ package ship;
 public class Galleon extends Ship {
 
 
-    public int cabin; //каюта
-    public boolean hasHold; //трюм
-    public int cat; //котик
+    protected int cabin; //РєР°СЋС‚Р°
+    protected boolean hasHold; //С‚СЂСЋРј
+    public int cat; //РєРѕС‚РёРє
 
 
     public Galleon(String name, int deck, String color, boolean downAnchor, int cabin, boolean hasHold, int cat) {
@@ -17,21 +17,20 @@ public class Galleon extends Ship {
 
 
     public int animal() {
-        System.out.print("Котиков на палубе находится: ");
+        Helper.output("РљРѕС‚РёРєРѕРІ РЅР° РїР°Р»СѓР±Рµ РЅР°С…РѕРґРёС‚СЃСЏ: ");
         return (this.cat);
     }
 
 
-    public String animal(int сarrot) {
-        int carrots = сarrot;
-        return ("На палубе находится " + cat + " котиков и " + carrots + " попугаев ");
+    public String animal(int СЃarrots) {
+        return ("РќР° РїР°Р»СѓР±Рµ РЅР°С…РѕРґРёС‚СЃСЏ " + cat + " РєРѕС‚РёРєРѕРІ Рё " + СЃarrots + " РїРѕРїСѓРіР°РµРІ ");
     }
 
 
     @Override
     public void moor() {
-        System.out.println("Корабль " + name + " высадил котика на берег");
-        System.out.println("Котиков на палубе теперь " + (this.cat - 1));
+        Helper.output("РљРѕСЂР°Р±Р»СЊ " + name + " РІС‹СЃР°РґРёР» РєРѕС‚РёРєР° РЅР° Р±РµСЂРµРі");
+        Helper.output("РљРѕС‚РёРєРѕРІ РЅР° РїР°Р»СѓР±Рµ С‚РµРїРµСЂСЊ " + (this.cat - 1));
     }
 
 

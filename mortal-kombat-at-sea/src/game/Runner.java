@@ -3,6 +3,7 @@ package game;
 import ship.Caravel;
 import ship.Frigate;
 import ship.Galleon;
+import ship.Helper;
 
 /*
  * ??????????.
@@ -14,25 +15,25 @@ public class Runner {
         // Logo.printLogo();
         //  menu.menuGame();
 
-        //проверяем методы класса Galleon
+        //РїСЂРѕРІРµСЂСЏРµРј РјРµС‚РѕРґС‹ РєР»Р°СЃСЃР° Galleon
         Galleon galleon = new Galleon("galleon", 3, "purple", false, 4, true, 3);
         System.out.println(galleon.animal());
-        System.out.println(galleon.animal(4));
+        Helper.output(galleon.animal(4));
         galleon.moor();
 
 
-        //проверяем методы класса Caravel
+        //РїСЂРѕРІРµСЂСЏРµРј РјРµС‚РѕРґС‹ РєР»Р°СЃСЃР° Caravel
         Caravel caravel = new Caravel("caravel", 2, "blue", false, false, true);
         caravel.upLadder();
         if (caravel.upLadder) {
-            System.out.println("Трап правда поднят");
+            Helper.output("РўСЂР°Рї РїСЂР°РІРґР° РїРѕРґРЅСЏС‚");
         }
         caravel.upSails();
         if (caravel.upSails) {
-            System.out.println("Паруса правда подняты");
+            Helper.output("РџР°СЂСѓСЃР° РїСЂР°РІРґР° РїРѕРґРЅСЏС‚С‹");
         }
 
-        //проверяем методы классов Frigate и Ship
+        //РїСЂРѕРІРµСЂСЏРµРј РјРµС‚РѕРґС‹ РєР»Р°СЃСЃРѕРІ Frigate Рё Ship
         Frigate frigate = new Frigate("frigate", 1, "white", true, true, 2, 3);
         frigate.shoot();
         frigate.move();
