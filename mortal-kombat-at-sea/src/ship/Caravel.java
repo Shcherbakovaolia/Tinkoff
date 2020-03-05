@@ -3,8 +3,8 @@ package ship;
 public final class Caravel extends Ship {
 
 
-    public boolean upSails; //паруса
-    public boolean upLadder; //трап
+    private boolean upSails; //паруса
+    private boolean upLadder; //трап
 
 
     public Caravel(String name, int deck, String color, boolean downAnchor, boolean upSails, boolean upLadder) {
@@ -13,6 +13,13 @@ public final class Caravel extends Ship {
         this.upLadder = upLadder;
     }
 
+    public boolean isUpLadder() {
+        return upLadder;
+    }
+
+    public boolean isUpSails() {
+        return upSails;
+    }
 
     public void upSails() {
         Helper.output(name + " поднял паруса");

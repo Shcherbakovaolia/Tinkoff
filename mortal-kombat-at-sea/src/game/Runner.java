@@ -1,9 +1,8 @@
 package game;
 
-import ship.Caravel;
-import ship.Frigate;
-import ship.Galleon;
-import ship.Helper;
+import ship.*;
+
+import java.util.Scanner;
 
 /*
  * ??????????.
@@ -15,31 +14,66 @@ public class Runner {
         // Logo.printLogo();
         //  menu.menuGame();
 
-        //проверяем методы класса Galleon
-        Galleon galleon = new Galleon("galleon", 3, "purple", false, 4, true, 3);
-        System.out.println(galleon.animal());
-        Helper.output(galleon.animal(4));
-        galleon.moor();
+        //работа с вводом данных с клавиатуры
+        Scanner scanner = new Scanner(System.in);
+        Scanner scanner1 = new Scanner(System.in);
+        Helper.output("Введите число котиков");
 
+        //проверяем методы класса Galleon
+        try {
+            Galleon galleon = new Galleon("galleon", 4,
+                    "purple", false, scanner1.nextInt());
+            System.out.println(galleon.animal());
+            Helper.output("Введите число попугаев");
+            try {
+                Helper.output(galleon.animal(scanner.nextInt()));
+            } catch (MyException e) {
+                System.err.println(e.getMessage());
+            } catch (Exception e) {
+                System.err.println("Некоректное значение, "
+                        + "введите цифру");
+            }
+            galleon.moor();
+        } catch (MyException e) {
+            System.err.println(e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Некоректное значение, "
+                    + "введите цифру");
+        }
 
 
         //проверяем методы класса Caravel
-        Caravel caravel = new Caravel("caravel", 2, "blue", false, false, true);
+
+
+        Caravel caravel = new Caravel("caravel", 2, "blue",
+                false, false, true);
         caravel.upLadder();
-        if (caravel.upLadder) {
+        if (caravel.isUpLadder()) {
             Helper.output("Трап правда поднят");
         }
         caravel.upSails();
-        if (caravel.upSails) {
+        if (caravel.isUpSails()) {
             Helper.output("Паруса правда подняты");
         }
 
+
         //проверяем методы классов Frigate и Ship
-        Frigate frigate = new Frigate("frigate", 1, "white", true, true, 2, 3);
-        frigate.shoot();
-        frigate.move();
-        frigate.stop();
-        frigate.moor();
+
+        Helper.output("Введите число пушек на Galleon");
+        Scanner scanner2 = new Scanner(System.in);
+        try {
+            Frigate frigate = new Frigate("frigate", 2, "white",
+                    true, true, scanner2.nextInt());
+            frigate.shoot();
+            frigate.move();
+            frigate.stop();
+            frigate.moor();
+        } catch (MyException e) {
+            System.err.println(e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Некоректное значение, "
+                    + "введите цифру");
+        }
     }
 }
 
